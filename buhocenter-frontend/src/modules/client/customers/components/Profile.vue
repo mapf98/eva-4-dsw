@@ -39,7 +39,7 @@
                     class="d-flex align-content-center justify-center pa-0 flex-wrap"
                     v-if="getClient.role.id === rol.ADMIN"
                 >
-                    <span v-for="item in items" :key="item.title">
+                    <span v-for="item in items" :key="item.title" :id="item.title">
                         <v-card
                             color="white"
                             class="mb-5 mx-2 ma-0"

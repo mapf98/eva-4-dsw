@@ -5,20 +5,22 @@
                 {{ $t('ADD_OFFER') }}
             </v-card-title>
             <div class="d-flex justify-center align-center mt-3">
-                <v-text-field :label="nameLabel" class="mx-3" v-model="offerName"></v-text-field>
+                <v-text-field :label="nameLabel" class="mx-3" v-model="offerName" id="inputName"></v-text-field>
                 <v-text-field
                     :label="percentageLabel"
                     min="1"
+                    id="inputRate"
                     max="100"
                     type="number"
                     v-model="offerPercentage"
                 ></v-text-field>
             </div>
-            <v-text-field :label="descriptionLabel" class="mx-3" v-model="offerDescription"></v-text-field>
+            <v-text-field :label="descriptionLabel" class="mx-3" v-model="offerDescription" id="inputDescription"></v-text-field>
             <div class="d-flex justify-center mt-6 mb-3">
                 <v-btn
                     @click="() => createOffer()"
                     color="primary"
+                    id="createBtn"
                     :disabled="checkForm"
                     :loading="loading"
                     >{{ $t('CREATE_OFFER') }}</v-btn
@@ -47,11 +49,11 @@
         >
             {{ $t('FORM_OFFER_PERCENTAGE_WARNING') }}
         </v-alert>
-        <v-snackbar v-model="addSuccess" top color="success" class="mt-12">
+        <v-snackbar v-model="addSuccess" top color="success" class="mt-12" id="snackbar">
             {{ $t('OFFER_ADDED') }}
             <v-btn color="white" text @click="addSuccess = false">{{ $t('CLOSE') }}</v-btn>
         </v-snackbar>
-        <v-snackbar v-model="addError" top color="error" class="mt-12">
+        <v-snackbar v-model="addError" top color="error" class="mt-12" id="snackbar">
             {{ $t('OFFER_ADD_ERROR') }}
             <v-btn color="white" text @click="addError = false">{{ $t('CLOSE') }}</v-btn>
         </v-snackbar>
@@ -72,7 +74,7 @@ export default class CreateOffer extends Vue {
     showPercentageError: boolean = false;
     showFormWarning: boolean = true;
     offerName: string = '';
-    offerPercentage: number = 1;
+    offerPercentage: number = 0;
     offerDescription: string = '';
 
     @Watch('offerPercentage')
@@ -125,7 +127,7 @@ export default class CreateOffer extends Vue {
             return true;
         } else {
             if (this.offerPercentage < 0 || this.offerPercentage > 100) {
-                this.offerPercentage = 1;
+                this.offerPercentage = 0;
                 return false;
             } else {
                 return false;

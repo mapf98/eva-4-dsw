@@ -16,6 +16,7 @@
                         color="primary"
                         dark
                         class="mb-2"
+                        id="createOffer"
                         @click="() => goToCreateOffer()"
                         v-if="createOffer"
                         >{{ $t('NEW_OFFER') }}</v-btn
@@ -24,6 +25,7 @@
                         color="primary"
                         dark
                         class="mb-2"
+                        id="seeOffer"
                         @click="() => goToAllOffers()"
                         v-if="allOffers"
                         >{{ $t('BACK_TO_OFFERS') }}</v-btn
