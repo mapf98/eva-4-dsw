@@ -33,7 +33,7 @@
                                 </v-list-item-content>
                             </v-list-item>
                         </v-list-group>
-                        <v-list-item v-else :key="item.term" link :to="item.url">
+                        <v-list-item v-else :key="item.term" link :to="item.url" :id="item.term">
                             <v-list-item-action>
                                 <v-icon style="font-size: 18px;">{{ item.icon }}</v-icon>
                             </v-list-item-action>

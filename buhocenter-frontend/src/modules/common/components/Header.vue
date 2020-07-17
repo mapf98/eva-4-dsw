@@ -69,11 +69,11 @@
                 <div class="text-xs-center">
                     <v-menu v-model="menu" :close-on-content-click="true" :nudge-width="200" offset-y bottom>
                         <template v-slot:activator="{ on }">
-                            <v-btn text v-on="on">{{ getClient.name }}</v-btn>
+                            <v-btn text v-on="on" id="menuProfile">{{ getClient.name }}</v-btn>
                         </template>
                         <v-card>
                             <v-list>
-                                <v-list-item to="/profile">
+                                <v-list-item to="/profile" id="profile">
                                     <v-icon large color="primary">mdi-account-circle-outline</v-icon>
                                     <v-list-item-title class="ml-2">{{ $t('MY_ACCOUNT') }}</v-list-item-title>
                                 </v-list-item>
@@ -89,7 +89,7 @@
             </div>
             <div class="mr-2 ml-2 hidden-sm-and-down" v-else>
                 <router-link to="/sign-in">
-                    <v-btn text>{{ $t('SIGN-IN') }}</v-btn>
+                    <v-btn text id="btnSignIn">{{ $t('SIGN-IN') }}</v-btn>
                 </router-link>
             </div>
             <div

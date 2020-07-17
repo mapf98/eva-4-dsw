@@ -32,13 +32,14 @@
                 </span>
 
                 <div class="validate-input mb-4" data-validate="Password is required">
-                    <v-text-field :label="$t('EMAIL')" v-model="email"></v-text-field>
+                    <v-text-field :label="$t('EMAIL')" v-model="email" id="inputEmail"></v-text-field>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="validate-input mb-2" data-validate="Password is required">
                     <v-text-field
                         :label="$t('PASSWORD')"
+                        id="inputPassword"
                         v-model="password"
                         :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
                         :type="showPass ? 'text' : 'password'"
@@ -56,7 +57,7 @@
                     <button class="login100-form-btn primary" v-if="isLoading">
                         <v-progress-circular :size="40" color="white" indeterminate></v-progress-circular>
                     </button>
-                    <button class="login100-form-btn primary" v-else type="submit">
+                    <button class="login100-form-btn primary" v-else type="submit" id="signIn">
                         {{ $t('SIGN-IN') }}
                     </button>
                 </div>
