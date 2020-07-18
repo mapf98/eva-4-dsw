@@ -11,9 +11,15 @@
                 </v-list-item>
             </v-col>
             <v-col cols="2" class="justify-center">
-                <v-btn text class="error" small :loading="loading" @click="deleteOffer(offer.id)">{{
-                    $t('REMOVE')
-                }}</v-btn>
+                <v-btn
+                    text
+                    class="error"
+                    small
+                    :loading="loading"
+                    @click="deleteOffer(offer.id)"
+                    :id="`remove-${offer.id}`"
+                    >{{ $t('REMOVE') }}</v-btn
+                >
             </v-col>
         </v-row>
     </v-card>
