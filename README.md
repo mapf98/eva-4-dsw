@@ -10,7 +10,7 @@ Pasos para ejecutar el plan de pruebas:
 
 + Levantar el backend en el puerto 3000 (si hay cambios, variar en el .env).
 + Levantar el frontend en el puerto 8080 (su hay cambios, modificar el archivo de pruebas por el puerto adecuado).
-+ Ejecutar el comando -> npm run test eva4DSW.spec.ts.
++ Ejecutar en la carpeta del frontend el comando -> npm run test eva4DSW.spec.ts.
 
 [Documento de pruebas](#)
 
