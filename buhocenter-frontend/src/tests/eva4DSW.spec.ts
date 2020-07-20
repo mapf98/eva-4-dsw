@@ -20,7 +20,7 @@ describe('Prueba de creación de ofertas', () => {
             await driver.findElement(By.id('inputRate')).clear();
             await driver.findElement(By.id('inputRate')).sendKeys(33);
             await driver.findElement(By.id('inputName')).sendKeys('Oferta especial');
-            await driver.findElement(By.id('inputDescription')).sendKeys('Aprovechala');
+            await driver.findElement(By.id('inputDescription')).sendKeys('Oferta de prueba para test E2E');
             await driver.findElement(By.id('createBtn')).click();
             await driver.wait(until.elementLocated(By.id('snackbar')), 10000);
             await driver.findElement(By.id('seeOffer')).click();
