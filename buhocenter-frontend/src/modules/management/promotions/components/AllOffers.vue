@@ -1,8 +1,9 @@
 <template>
     <div>
         <OfferBox
-            v-for="offer in OFFERS"
+            v-for="(offer, index) in OFFERS"
             :key="offer.id"
+            :index="index"
             v-bind:offer="offer"
             @refreshOffers="refreshOffers"
         />

@@ -17,7 +17,7 @@
                     small
                     :loading="loading"
                     @click="deleteOffer(offer.id)"
-                    :id="`remove-${offer.id}`"
+                    :id="'offer_' + index"
                     >{{ $t('REMOVE') }}</v-btn
                 >
             </v-col>
@@ -33,6 +33,7 @@ import OffersTypes from '@/store/offers/methods/offers.methods';
 @Component
 export default class Offer extends Vue {
     @Prop() offer!: Offers;
+    @Prop() index!: number;
     loading: boolean = false;
 
     async deleteOffer(offerId: number): Promise<void> {
