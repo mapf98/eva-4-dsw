@@ -5,7 +5,12 @@
                 {{ $t('ADD_OFFER') }}
             </v-card-title>
             <div class="d-flex justify-center align-center mt-3">
-                <v-text-field :label="nameLabel" class="mx-3" v-model="offerName" id="inputName"></v-text-field>
+                <v-text-field
+                    :label="nameLabel"
+                    class="mx-3"
+                    v-model="offerName"
+                    id="inputName"
+                ></v-text-field>
                 <v-text-field
                     :label="percentageLabel"
                     min="1"
@@ -15,7 +20,12 @@
                     v-model="offerPercentage"
                 ></v-text-field>
             </div>
-            <v-text-field :label="descriptionLabel" class="mx-3" v-model="offerDescription" id="inputDescription"></v-text-field>
+            <v-text-field
+                :label="descriptionLabel"
+                class="mx-3"
+                v-model="offerDescription"
+                id="inputDescription"
+            ></v-text-field>
             <div class="d-flex justify-center mt-6 mb-3">
                 <v-btn
                     @click="() => createOffer()"
